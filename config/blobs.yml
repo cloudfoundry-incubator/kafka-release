@@ -1,1 +1,9 @@
---- {}
+---
+jre/jre-8u25-linux-x64.gz:
+  object_id: 8ffa7451-bdf8-498f-be82-2e1db7130918
+  sha: c55d385e8e52bb62293f02d958db580db4d59343
+  size: 62763875
+kafka/kafka_2.10-0.8.2-beta.tgz:
+  object_id: 1a3ff3a0-32bb-4a8f-b7ab-5bab167fab77
+  sha: aa6bb6bfa6453c73153ef6117ffd9f8ab8b0071c
+  size: 16103621
