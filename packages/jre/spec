@@ -1,0 +1,7 @@
+---
+name: jre
+
+dependencies:
+
+files:
+- jre/jre-8u25-linux-x64.gz

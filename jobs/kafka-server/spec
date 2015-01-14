@@ -1,0 +1,7 @@
+---
+name: kafka-server
+templates:
+  server.properties.erb: config/server.properties
+packages:
+- jre
+- kafka

@@ -1,0 +1,6 @@
+set -e
+
+VERSION=8u25-linux-x64
+
+tar -zxf jre/jre-${VERSION}.gz
+cp -R jre1.8.0_25/* ${BOSH_INSTALL_TARGET}

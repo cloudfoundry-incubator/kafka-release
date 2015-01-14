@@ -1,0 +1,7 @@
+---
+name: zookeeper
+templates:
+  zookeeper.properties.erb: config/zookeeper.properties
+packages:
+- jre
+- kafka

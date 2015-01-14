@@ -1,0 +1,6 @@
+set -e
+
+VERSION=2.10-0.8.2-beta
+
+tar xzf kafka/kafka_${VERSION}.tgz
+cp -R kafka_${VERSION}/* ${BOSH_INSTALL_TARGET}

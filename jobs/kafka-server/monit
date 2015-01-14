@@ -1,0 +1,6 @@
+set logfile syslog
+
+check process kafka-server matching kafka-server-start.sh
+  start program "/bin/bash -c 'JAVA_HOME=/var/vcap/packages/jre /var/vcap/packages/kafka/bin/kafka-server-start.sh /var/vcap/jobs/kafka-server/config/server.properties 2>&1 | logger'"
+  stop program "/bin/bash -c '/var/vcap/packages/kafka/bin/kafka-server-stop.sh'"
+  depends on zookeeper
