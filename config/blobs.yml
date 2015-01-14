@@ -7,3 +7,7 @@ kafka/kafka_2.10-0.8.2-beta.tgz:
   object_id: 1a3ff3a0-32bb-4a8f-b7ab-5bab167fab77
   sha: aa6bb6bfa6453c73153ef6117ffd9f8ab8b0071c
   size: 16103621
+zookeeper/zookeeper-3.4.6.tar.gz:
+  object_id: f3c578e0-9bfd-4459-aa2f-403153a32cc7
+  sha: 2a9e53f5990dfe0965834a525fbcad226bf93474
+  size: 17699306
