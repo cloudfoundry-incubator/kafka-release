@@ -13,8 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # the directory where the snapshot is stored.
-dataDir=/var/vcap/data/zookeeper
+dataDir=/var/vcap/store/zookeeper
 # the port at which the clients will connect
 clientPort=2181
 # disable the per-ip limit on the number of connections since this is a non-production config
 maxClientCnxns=0
+initLimit=5
+tickTime=2000
+syncLimit=2
+
+<% p('zookeeper.ips').each_with_index do |address, index| %>
+server.<%= index + 1 %>=<%= address %>:2888:3888
+<% end %>

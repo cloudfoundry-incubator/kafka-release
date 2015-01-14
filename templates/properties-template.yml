@@ -1,0 +1,3 @@
+properties:
+  zookeeper:
+    ips: (( jobs.zookeeper.networks.default.static_ips ))

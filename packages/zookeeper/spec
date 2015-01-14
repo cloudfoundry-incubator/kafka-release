@@ -1,0 +1,6 @@
+---
+name: zookeeper
+
+files:
+    # http://apache.mirrors.pair.com/zookeeper/stable/
+    - zookeeper/zookeeper-*.tar.gz

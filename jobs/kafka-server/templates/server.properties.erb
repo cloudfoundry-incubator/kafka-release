@@ -17,7 +17,7 @@
 ############################# Server Basics #############################
 
 # The id of the broker. This must be set to a unique integer for each broker.
-broker.id=0
+broker.id=<%= spec.index %>
 
 ############################# Socket Server Settings #############################
 
@@ -119,3 +119,5 @@ zookeeper.connect=localhost:2181
 
 # Timeout in ms for connecting to zookeeper
 zookeeper.connection.timeout.ms=2000
+
+controlled.shutdown.enable=true

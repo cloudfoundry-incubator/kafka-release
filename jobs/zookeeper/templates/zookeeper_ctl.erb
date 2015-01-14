@@ -1,0 +1,31 @@
+#!/bin/bash
+
+export JAVA_HOME=/var/vcap/packages/jre
+
+export ZOO_LOG_DIR=/var/vcap/sys/log/zookeeper
+JOB_DIR=/var/vcap/jobs/zookeeper
+DATA_DIR=/var/vcap/store/zookeeper
+CONFIG_FILE=${JOB_DIR}/config/zoo.conf
+
+case $1 in
+
+start)
+mkdir -p $ZOO_LOG_DIR $DATA_DIR
+chown -R vcap:vcap $ZOO_LOG_DIR $DATA_DIR
+
+ln -s ${JOB_DIR}/config/myid ${DATA_DIR}/myid
+
+exec /var/vcap/packages/zookeeper/bin/zkServer.sh start $CONFIG_FILE 2>&1 | logger
+
+;;
+
+stop)
+
+exec /var/vcap/packages/zookeeper/bin/zkServer.sh stop $CONFIG_FILE 2>&1 | logger
+
+;;
+
+*)
+echo "Usage: ctl {start|stop}" ;;
+
+esac

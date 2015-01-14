@@ -1,0 +1,30 @@
+#!/bin/bash
+
+export JAVA_HOME=/var/vcap/packages/jre
+
+export LOG_DIR=/var/vcap/sys/log/kafa-server
+export DAEMON_MODE=true
+
+JOB_DIR=/var/vcap/jobs/kafka-server
+CONFIG_FILE=${JOB_DIR}/config/server.properties
+
+case $1 in
+
+start)
+mkdir -p $LOG_DIR $DATA_DIR
+chown -R vcap:vcap $LOG_DIR $DATA_DIR
+
+exec /var/vcap/packages/kafka/bin/kafka-server-start.sh $CONFIG_FILE 2>&1 | logger
+
+;;
+
+stop)
+
+exec /var/vcap/packages/kafka/bin/kafka-server-stop.sh 2>&1 | logger
+
+;;
+
+*)
+echo "Usage: ctl {start|stop}" ;;
+
+esac

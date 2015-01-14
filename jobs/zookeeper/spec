@@ -1,7 +1,12 @@
 ---
 name: zookeeper
 templates:
-  zookeeper.properties.erb: config/zookeeper.properties
+  zoo.conf.erb: config/zoo.conf
+  zookeeper_ctl.erb : bin/zookeeper_ctl
+  myid.erb: config/myid
 packages:
 - jre
-- kafka
+- zookeeper
+properties:
+  zookeeper.ips:
+    description:  "IPs for all the zookeeper nodes"

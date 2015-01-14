@@ -1,6 +1,8 @@
 set logfile syslog
 
-check process zookeeper matching zookeeper-server-start.sh
-  start program "/bin/bash -c 'JAVA_HOME=/var/vcap/packages/jre /var/vcap/packages/kafka/bin/zookeeper-server-start.sh /var/vcap/jobs/zookeeper/config/zookeeper.properties 2>&1 | logger'"
-  stop program "/bin/bash -c '/var/vcap/packages/kafka/bin/zookeeper-server-stop.sh'"
+check process zookeeper
+  with pidfile /var/vcap/store/zookeeper/zookeeper_server.pid
+  start program "/var/vcap/jobs/zookeeper/bin/zookeeper_ctl start"
+  stop program "/var/vcap/jobs/zookeeper/bin/zookeeper_ctl stop"
+  group vcap
   

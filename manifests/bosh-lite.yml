@@ -13,10 +13,15 @@ jobs:
   templates:
   - {name: kafka-server, release: kafka}
   - {name: zookeeper, release: kafka}
-  instances: 1
+  instances: 3
   resource_pool: default
   networks:
   - name: warden-net
+    static_ips:  [10.244.0.2, 10.244.0.6, 10.244.0.10]
+
+properties:
+  zookeeper:
+    ips: [10.244.0.2, 10.244.0.6, 10.244.0.10]
 
 networks:
 - name: warden-net
@@ -1698,15 +1703,15 @@ resource_pools:
     name: random
   name: default
   network: warden-net
-  size: 1
+  size: 3
   stemcell:
     name: bosh-warden-boshlite-ubuntu-trusty-go_agent
     version: latest
 
 update:
-  canaries: 0
+  canaries: 1
   canary_watch_time: 1000-180000
-  max_in_flight: 50
+  max_in_flight: 1
   serial: true
   update_watch_time: 1000-180000
 
