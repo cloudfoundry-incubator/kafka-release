@@ -1,3 +1,4 @@
+final_name: kafka
 blobstore:
   provider: s3
   options:
