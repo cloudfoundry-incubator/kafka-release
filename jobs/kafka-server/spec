@@ -8,4 +8,6 @@ packages:
 - jre
 - kafka
 
-properties: {}
+properties:
+  kafka.defaultPartitions:
+    description: "The default number of partitions for the topics"
