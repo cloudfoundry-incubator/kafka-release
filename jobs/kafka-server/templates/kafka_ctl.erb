@@ -14,6 +14,7 @@ start)
 mkdir -p $LOG_DIR $DATA_DIR
 chown -R vcap:vcap $LOG_DIR $DATA_DIR
 
+export KAFKA_HEAP_OPTS="-Xmx5G -Xms5G"
 exec /var/vcap/packages/kafka/bin/kafka-server-start.sh $CONFIG_FILE 2>&1 | logger
 
 ;;
