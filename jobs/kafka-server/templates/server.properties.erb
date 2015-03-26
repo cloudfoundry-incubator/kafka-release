@@ -63,6 +63,7 @@ log.dirs=/var/vcap/store/kafka-logs
 # parallelism for consumption, but this will also result in more files across
 # the brokers.
 num.partitions=<%= p('kafka.defaultPartitions')%>
+default.replication.factor=<%= p('kafka.defaultReplicationFactor') %>
 
 # The number of threads per data directory to be used for log recovery at startup and flushing at shutdown.
 # This value is recommended to be increased for installations with data dirs located in RAID array.

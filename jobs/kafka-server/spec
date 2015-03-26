@@ -12,3 +12,6 @@ properties:
   kafka.defaultPartitions:
     description: "The default number of partitions for the topics"
     default: 1
+  kafka.defaultReplicationFactor:
+    description: "The default number of replicas for the topics"
+    default: 1
