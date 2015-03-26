@@ -15,3 +15,6 @@ properties:
   kafka.defaultReplicationFactor:
     description: "The default number of replicas for the topics"
     default: 1
+  kafka.logRetentionHours:
+    description: "The default number of hours the logs will be retained"
+    default: 168
