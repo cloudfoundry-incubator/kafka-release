@@ -94,11 +94,11 @@ num.recovery.threads.per.data.dir=1
 # from the end of the log.
 
 # The minimum age of a log file to be eligible for deletion
-log.retention.hours=<%= p('kafka.logRetentionHours') %>
+#log.retention.hours=168
 
 # A size-based retention policy for logs. Segments are pruned from the log as long as the remaining
 # segments don't drop below log.retention.bytes.
-#log.retention.bytes=1073741824
+log.retention.bytes=<%= spec.persistent_disk * 1024 * 1024 %>
 
 # The maximum size of a log segment file. When this size is reached a new log segment will be created.
 log.segment.bytes=1073741824
