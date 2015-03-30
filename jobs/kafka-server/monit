@@ -3,4 +3,3 @@ set logfile syslog
 check process kafka matching kafka
   start program "/var/vcap/jobs/kafka-server/bin/kafka_ctl start"
   stop program "/var/vcap/jobs/kafka-server/bin/kafka_ctl stop"
-  depends on zookeeper

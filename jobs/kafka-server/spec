@@ -18,3 +18,7 @@ properties:
   kafka.logRetentionHours:
     description: "The default number of hours the logs will be retained"
     default: 168
+  kafka.brokers:
+    description:  "IPs for all the kafka nodes"
+  zookeeper.ips:
+    description:  "IPs for all the zookeeper nodes"

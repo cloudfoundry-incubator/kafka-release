@@ -9,19 +9,28 @@ compilation:
   reuse_compilation_vms: true
   workers: 3
 jobs:
-- name: kafka
+- name: zookeeper
   templates:
-  - {name: kafka-server, release: kafka}
   - {name: zookeeper, release: kafka}
   instances: 3
   resource_pool: default
   networks:
   - name: warden-net
     static_ips:  [10.244.3.6, 10.244.3.10, 10.244.3.14]
+- name: kafka
+  templates:
+  - {name: kafka-server, release: kafka}
+  instances: 3
+  resource_pool: default
+  networks:
+  - name: warden-net
+    static_ips:  [10.244.3.18, 10.244.3.22, 10.244.3.26]
 
 properties:
   zookeeper:
     ips: [10.244.3.6, 10.244.3.10, 10.244.3.14]
+  kafka:
+    brokers: [10.244.3.18, 10.244.3.22, 10.244.3.26]
 
 networks:
 - name: warden-net
@@ -1703,7 +1712,7 @@ resource_pools:
     name: random
   name: default
   network: warden-net
-  size: 3
+  size: 6
   stemcell:
     name: bosh-warden-boshlite-ubuntu-trusty-go_agent
     version: latest
