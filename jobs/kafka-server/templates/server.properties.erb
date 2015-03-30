@@ -98,7 +98,7 @@ num.recovery.threads.per.data.dir=1
 
 # A size-based retention policy for logs. Segments are pruned from the log as long as the remaining
 # segments don't drop below log.retention.bytes.
-log.retention.bytes=<%= spec.persistent_disk * 1024 * 1024 %>
+log.retention.bytes=<%= (spec.persistent_disk-10000) * 1024 * 1024%>
 
 # The maximum size of a log segment file. When this size is reached a new log segment will be created.
 log.segment.bytes=1073741824
