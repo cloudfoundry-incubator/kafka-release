@@ -1,5 +1,5 @@
 set logfile syslog
 
-check process kafka matching kafka
+check process kafka with pidfile /var/vcap/jobs/kafka-server/kafka.pid
   start program "/var/vcap/jobs/kafka-server/bin/kafka_ctl start"
   stop program "/var/vcap/jobs/kafka-server/bin/kafka_ctl stop"

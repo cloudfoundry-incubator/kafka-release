@@ -1,27 +1,35 @@
 #!/bin/bash
 
 export JAVA_HOME=/var/vcap/packages/jre
-
 export LOG_DIR=/var/vcap/sys/log/kafka-server
-export DAEMON_MODE=true
+export KAFKA_HEAP_OPTS="-Xmx5G -Xms5G"
 
 JOB_DIR=/var/vcap/jobs/kafka-server
 CONFIG_FILE=${JOB_DIR}/config/server.properties
+LOG_PIPE=${JOB_DIR}/kafka.pipe.log
+PID_FILE=${JOB_DIR}/kafka.pid
 
 case $1 in
 
 start)
-mkdir -p $LOG_DIR $DATA_DIR
-chown -R vcap:vcap $LOG_DIR $DATA_DIR
+if [ ! -x $LOG_PIPE ]; then
+    mkfifo $LOG_PIPE
+fi
 
-export KAFKA_HEAP_OPTS="-Xmx5G -Xms5G"
-exec /var/vcap/packages/kafka/bin/kafka-server-start.sh $CONFIG_FILE 2>&1 | logger
+if [ -d $LOG_DIR ]; then
+    mkdir -p $LOG_DIR
+    chown -R vcap:vcap $LOG_DIR
+fi
+
+/var/vcap/packages/kafka/bin/kafka-server-start.sh $CONFIG_FILE > $LOG_PIPE 2>&1 &
+echo $! > $PID_FILE
+logger < $LOG_PIPE
 
 ;;
 
 stop)
 
-exec /var/vcap/packages/kafka/bin/kafka-server-stop.sh 2>&1 | logger
+kill -SIGTERM `cat $PID_FILE`
 
 ;;
 
