@@ -15,9 +15,9 @@ properties:
   kafka.defaultReplicationFactor:
     description: "The default number of replicas for the topics"
     default: 1
-  kafka.logRetentionHours:
-    description: "The default number of hours the logs will be retained"
-    default: 168
+  kafka.logRetentionBytes:
+    description: "The default number of bytes the partition data will be retained"
+    default: 0
   kafka.brokers:
     description:  "IPs for all the kafka nodes"
   zookeeper.ips:
