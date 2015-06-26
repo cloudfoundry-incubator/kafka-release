@@ -15,8 +15,8 @@ properties:
   kafka.defaultReplicationFactor:
     description: "The default number of replicas for the topics"
     default: 1
-  kafka.logRetentionBytes:
-    description: "The default number of bytes the partition data will be retained"
+  kafka.persistentDisk:
+    description: "The size of kafka's persistent disk"
     default: 0
   kafka.brokers:
     description:  "IPs for all the kafka nodes"
