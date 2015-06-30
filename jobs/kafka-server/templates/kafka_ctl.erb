@@ -12,7 +12,7 @@ PID_FILE=${JOB_DIR}/kafka.pid
 case $1 in
 
 start)
-if [ ! -x $LOG_PIPE ]; then
+if [ ! -e $LOG_PIPE ]; then
     mkfifo $LOG_PIPE
 fi
 
@@ -20,6 +20,8 @@ if [ -d $LOG_DIR ]; then
     mkdir -p $LOG_DIR
     chown -R vcap:vcap $LOG_DIR
 fi
+
+ulimit -n 8192
 
 /var/vcap/packages/kafka/bin/kafka-server-start.sh $CONFIG_FILE > $LOG_PIPE 2>&1 &
 echo $! > $PID_FILE
