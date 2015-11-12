@@ -21,6 +21,8 @@ properties:
   kafka.retentionHours:
     description: "The number of hours to retain data"
     default: 24
+  kafka.numberOfTopics:
+    description: "The number of topics that will be used"
   kafka.brokers:
     description:  "IPs for all the kafka nodes"
   zookeeper.ips:

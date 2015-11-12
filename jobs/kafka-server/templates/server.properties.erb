@@ -96,9 +96,25 @@ num.recovery.threads.per.data.dir=1
 # The minimum age of a log file to be eligible for deletion
 log.retention.hours=<%= p('kafka.retentionHours') %>
 
-# A size-based retention policy for logs. Segments are pruned from the log as long as the remaining
-# segments don't drop below log.retention.bytes.
-log.retention.bytes=<%= ((p('kafka.persistentDisk') * 0.75) / (p('kafka.defaultPartitions') * p('kafka.defaultReplicationFactor') / p('kafka.brokers').length) * 1024 * 1024 / 2).to_int %>
+# The amount of data to retain in the log for each topic-partitions. Note that this is the limit
+# per-partition so multiply by the number of partitions to get the total data retained for # the
+# topic. Also note that if both log.retention.hours and log.retention.bytes are both set we
+# delete a segment when either limit is exceeded.
+<%
+
+def retention_bytes(disk_mb, partitions, replication_factor, number_of_topics)
+  disk_bytes = disk_mb * 2**10
+  # remove two GBs for the OS and only fill up 65% of that space
+  available_space = disk_bytes * 0.65
+  # add the leader in with the replicas
+  total_replications = replication_factor + 1
+  maximum_partitions = partitions * total_replications * number_of_topics
+  (available_space / maximum_partitions).to_int
+end
+
+%>
+log.retention.bytes=<%= retention_bytes p('kafka.persistentDisk'), p('kafka.defaultPartitions'), p('kafka.defaultReplicationFactor'), p('kafka.numberOfTopics') %>
+
 
 # The maximum size of a log segment file. When this size is reached a new log segment will be created.
 log.segment.bytes=1073741824
