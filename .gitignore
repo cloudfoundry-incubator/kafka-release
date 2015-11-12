@@ -8,3 +8,4 @@ blobs
 config/dev.yml
 config/private.yml
 dev_releases
+.DS_Store
