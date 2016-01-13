@@ -20,4 +20,6 @@ builds:
     version: '9'
   40ce1c08-0cd2-4f63-bb9b-9854c2eacd2b:
     version: '10'
+  3e2b82a6-3d5d-4bff-84c8-cba396c90e5d:
+    version: '11'
 format-version: '2'
