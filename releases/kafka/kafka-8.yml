@@ -1,0 +1,34 @@
+---
+packages:
+- name: jre
+  version: f6390a960a4c713001d88624b1b867ba5eb50843
+  fingerprint: f6390a960a4c713001d88624b1b867ba5eb50843
+  sha1: ee3ea38e70d58ca18a6be80cf8a2788dbd479273
+  dependencies: []
+- name: kafka
+  version: bee9c57ba3b527afd576242caee44c2bf30bb5d8
+  fingerprint: bee9c57ba3b527afd576242caee44c2bf30bb5d8
+  sha1: e6b21120728180469c0517b792da66796e59b5f9
+  dependencies: []
+- name: zookeeper
+  version: bf23fc2057a8de1c9948606de7228357248b7f04
+  fingerprint: bf23fc2057a8de1c9948606de7228357248b7f04
+  sha1: 9a1acf92a0681829805ec2207145ed80df11d771
+  dependencies: []
+jobs:
+- name: kafka-server
+  version: fb986732c59b6a62e9d426d0c5b0872a99dea39d
+  fingerprint: fb986732c59b6a62e9d426d0c5b0872a99dea39d
+  sha1: ce683a528d4bd221a2873dca532fa6a9f2f6fe7c
+- name: zookeeper
+  version: cce505c7af580eccd25fa8fe6214bdb882202e6b
+  fingerprint: cce505c7af580eccd25fa8fe6214bdb882202e6b
+  sha1: 424488ebc125af0662354dcfd8d42206479fe5c1
+license:
+  version: a3e6d245553160dad1d273d363550134abc94578
+  fingerprint: a3e6d245553160dad1d273d363550134abc94578
+  sha1: 6683f782f4247de97c3390a5ede4ab71f2f01ac5
+commit_hash: 101a5459
+uncommitted_changes: true
+name: kafka
+version: '8'
