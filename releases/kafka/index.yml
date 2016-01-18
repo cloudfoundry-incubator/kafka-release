@@ -70,4 +70,6 @@ builds:
     version: '34'
   4ae9df2c-f735-4469-a131-12dbf98842ed:
     version: '35'
+  ece60fda-f300-4f44-862c-fc113ce93865:
+    version: '36'
 format-version: '2'
