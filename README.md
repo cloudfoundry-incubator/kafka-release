@@ -6,3 +6,4 @@
 ```
 bin/kafka-topics.sh --zookeeper zk_host:port/chroot --alter --topic my_topic_name --partitions 40
 ```
+
