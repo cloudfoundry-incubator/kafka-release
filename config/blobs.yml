@@ -1,9 +1,4 @@
 ---
-jre/openjdk-1.8.0_60-x86_64-trusty-jre.tar.gz:
-  object_id: e6e2174d-7b34-4459-984a-8eada574c9ab
-  sha: !binary |-
-    MTgzMWJiOWRiNzdlMzA0YzliMDE2N2Q1YjYxMzUwYWE4MzM5M2EyMg==
-  size: 77540278
 kafka/kafka_2.10-0.8.2.1.tgz:
   object_id: cbf2285f-dc70-43ab-aca1-7f2f2c6569d3
   sha: !binary |-
@@ -14,3 +9,8 @@ zookeeper/zookeeper-3.4.6.tar.gz:
   sha: !binary |-
     MmE5ZTUzZjU5OTBkZmUwOTY1ODM0YTUyNWZiY2FkMjI2YmY5MzQ3NA==
   size: 17699306
+openjdk/openjdk-1.8.0_60-x86_64-trusty-jre.tar.gz:
+  object_id: f7705a03-2637-4aee-802e-042542f387b6
+  sha: !binary |-
+    MTgzMWJiOWRiNzdlMzA0YzliMDE2N2Q1YjYxMzUwYWE4MzM5M2EyMg==
+  size: 77540278
