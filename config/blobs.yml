@@ -9,8 +9,8 @@ zookeeper/zookeeper-3.4.6.tar.gz:
   sha: !binary |-
     MmE5ZTUzZjU5OTBkZmUwOTY1ODM0YTUyNWZiY2FkMjI2YmY5MzQ3NA==
   size: 17699306
-openjdk/openjdk-1.8.0_60-x86_64-trusty-jre.tar.gz:
-  object_id: f7705a03-2637-4aee-802e-042542f387b6
+jre/openjdk-1.8.0_60-x86_64-trusty-jre.tar.gz:
+  object_id: 6e30e38e-9d1d-46f4-b613-968a64146226
   sha: !binary |-
     MTgzMWJiOWRiNzdlMzA0YzliMDE2N2Q1YjYxMzUwYWE4MzM5M2EyMg==
   size: 77540278

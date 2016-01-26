@@ -4,4 +4,4 @@ name: jre
 dependencies:
 
 files:
-- openjdk/openjdk-*.tar.gz
+- jre/openjdk-*.tar.gz
