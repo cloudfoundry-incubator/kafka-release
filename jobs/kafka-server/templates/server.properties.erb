@@ -113,7 +113,7 @@ def retention_bytes(disk_mb, partitions, replication_factor, number_of_topics)
 end
 
 %>
-log.retention.bytes=<%= retention_bytes p('kafka.persistentDisk'), p('kafka.defaultPartitions'), p('kafka.defaultReplicationFactor'), p('kafka.numberOfTopics') %>
+log.retention.bytes=<%= retention_bytes p('kafka.ephemeralDisk'), p('kafka.defaultPartitions'), p('kafka.defaultReplicationFactor'), p('kafka.numberOfTopics') %>
 
 
 # The maximum size of a log segment file. When this size is reached a new log segment will be created.

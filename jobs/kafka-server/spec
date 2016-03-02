@@ -15,8 +15,8 @@ properties:
   kafka.defaultReplicationFactor:
     description: "The default number of replicas for the topics"
     default: 1
-  kafka.persistentDisk:
-    description: "The size of kafka's persistent disk"
+  kafka.ephemeralDisk:
+    description: "The size of kafka's ephemeral disk"
     default: 0
   kafka.retentionHours:
     description: "The number of hours to retain data"
